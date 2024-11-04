@@ -8,9 +8,13 @@ to build:
 speed test for 10^7 size vectors on old Mac:
 
 shared_ptr_size: 16
+
 reference_wrapper_size: 8
+
 optional_reference_wrapper_size: 16
+
 unique_ptr_size: 8
+
 reference_to_unique_ptr_size: 8
 
 Time for shared_ptr assignment loop: 2.52649 seconds
