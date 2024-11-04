@@ -28,8 +28,10 @@ int main(int argc, char** argv) {
 
     std::vector<IntPtr> ptrVec1;
     std::vector<IntPtr> ptrVec2;
-    std::vector<OptionalIntRef> refVec1;
-    std::vector<OptionalIntRef> refVec2;
+    std::vector<IntRef> refVec1;
+    std::vector<IntRef> refVec2;    
+    std::vector<OptionalIntRef> optionalVec1;
+    std::vector<OptionalIntRef> optionalVec2;
     std::vector<UniqueIntPtr> uniquePtrVec1;
     std::vector<UniqueIntRef> uniqueRefVec2;
     std::vector<int> intVec(size);
@@ -75,7 +77,7 @@ int main(int argc, char** argv) {
     // Measure time for optional reference_wrapper assignment
     auto start5 = std::chrono::high_resolution_clock::now();
     for(int i = 0; i < size; i++) {
-        refVec1.push_back(std::ref(intVec[i]));
+        optionalVec1.push_back(std::ref(intVec[i]));
     }
     auto end5 = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed5 = end5 - start5;
@@ -84,7 +86,7 @@ int main(int argc, char** argv) {
     // Measure time for optional reference_wrapper copy
     auto start6 = std::chrono::high_resolution_clock::now();
     for(int i = 0; i < size; i++) {
-        refVec2.push_back(refVec1[i]);
+        optionalVec2.push_back(refVec1[i]);
     }
     auto end6 = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed6 = end6 - start6;
