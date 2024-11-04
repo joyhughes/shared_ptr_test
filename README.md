@@ -2,7 +2,7 @@
 Speed and size tests of shared_ptr and alternatives
 
 to build: 
-c++ -std=c++17 shared_ptr_test.cpp -o shared_ptr_test
+`c++ -std=c++17 shared_ptr_test.cpp -o shared_ptr_test`
 
 speed test for 10^7 size vectors on old Mac:
 
